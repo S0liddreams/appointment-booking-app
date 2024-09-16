@@ -1,2 +1,2 @@
 # appointment-booking-app
-An app that helps you books appointments
+A React.js app that helps you book appointment.
