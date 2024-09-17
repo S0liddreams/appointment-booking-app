@@ -7,11 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primaryColor: "#0067FF",
+        primaryColor: "#030302",
         yellowColor: "#FEC60D",
         purpleColor: "#9771FF",
         headingColor: "#181A1E",
-        textColor: "#4E545F"
+        textColor: "#4E545F",
+        custombg: "#f2edef",
       },
       
       boxShadow: {
