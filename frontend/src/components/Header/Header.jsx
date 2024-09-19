@@ -29,7 +29,7 @@ const Header = () => {
 
   const headerRef = useRef(null)
   const menuRef = useRef(null)
-  const handleStickyHeader = () => {
+  const handleStickyHeader = () =>{
     window.addEventListener('scroll', ()=>{
       if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80 ){
         headerRef.current.classList.add('sticky__header')
@@ -38,11 +38,11 @@ const Header = () => {
       }
     })
   }
-
+ 
   useEffect(()=>{
-    handleStickyHeader()
-    return ()=> window.removeEventListener('scrol', handleStickyHeader)
-  })
+    handleStickyHeader();
+    return ()=> window.removeEventListener('scroll', handleStickyHeader);
+  });
 
   const toggleMenu = ()=> menuRef.current.classList.toggle('show__menu') 
 
@@ -54,7 +54,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/**===========LOGO=========== */}
           <div>
-            <img className="h-[50px]" src={Logo} alt="" />
+            <img className="h-[30px] md:h-[50px] w-[50px] md:w-auto" src={Logo} alt="" />
           </div>
 
           {/**============MENU=================== */}
