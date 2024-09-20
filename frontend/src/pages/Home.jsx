@@ -6,12 +6,16 @@ import icon03 from "../assets/images/icon03.png";
 import videoIcon from "../assets/images/video-icon.png";
 import featureImg from "../assets/images/feature-img.png";
 import avatarIcon from "../assets/images/passport.jpg";
-import faqImg from "../assets/images/faq-img.png"
+import faqImg from "../assets/images/faq-img.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
+import FaqList from "../components/Faq/FaqList";
+import Testimonial from "../components/Testimonial/Testimonial";
+
+
 
 const Home = () => {
   return (
@@ -246,7 +250,7 @@ const Home = () => {
       {/**===============FEATURE SECTION END=========== */}
 
       {/**===============OUR GREAT DOCTORS=========== */}
-        <section>
+      <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">Our great doctors</h2>
@@ -256,29 +260,47 @@ const Home = () => {
               cumque dolor reiciendis omnis quos commodi quis amet error odit a.
             </p>
           </div>
-          </div>
-          <DoctorList />
-          
-        </section>
+        </div>
+        <DoctorList />
+      </section>
 
-       {/**===============OUR GREAT DOCTORS END=========== */}
+      {/**===============OUR GREAT DOCTORS END=========== */}
 
+      {/**===============FAQ SECTION=========== */}
 
-       {/**===============FAQ SECTION=========== */}
-
-       <section>
+      <section>
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
-            <div className="w-1/2 hidden md:block"><img src={faqImg} alt="" /></div>
-
+            <div className="w-1/2 hidden md:block">
+              <img src={faqImg} alt="" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h2 className="heading">Most questions by our patients</h2>
+              <FaqList />
+            </div>
           </div>
-
         </div>
-       </section>
-       {/**===============FAQ SECTION END=========== */}
+      </section>
+      {/**===============FAQ SECTION END=========== */}
 
+      {/**===============TESTIMONIAL SECTION =========== */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patients say</h2>
+            <p className="text__para text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+              id aliquam, dignissimos iste quia fuga animi deserunt natus iure
+              cumque dolor reiciendis omnis quos commodi quis amet error odit a.
+            </p>
+          </div>
+        <Testimonial />
+         
+        </div>
+      </section>
+     
 
-
+      {/**===============TESTIMONIAL SECTION END =========== */}
     </>
   );
 };
