@@ -4,9 +4,10 @@ import icon01 from "../assets/images/icon01.png";
 import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
 import videoIcon from "../assets/images/video-icon.png";
-import featureImg from "../assets/images/feature-img.png";
+import featureImg from "../assets/images/doctorImg2.jpg";
 import avatarIcon from "../assets/images/passport.jpg";
-import faqImg from "../assets/images/faq-img.png";
+import faqImg from '../assets/images/DoctorImg1.webp'
+
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import About from "../components/About/About";
@@ -206,7 +207,7 @@ const Home = () => {
           {/**===============FEATURE IMAGE=========== */}
 
           <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0 ">
-            <img src={featureImg} className="w-3/4" alt="" />
+            <img src={featureImg} className="w-3/4 rounded-md" alt="" />
 
             <div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5  z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
               <div className="flex items-center justify-between">
@@ -271,8 +272,8 @@ const Home = () => {
       <section>
         <div className="container">
           <div className="flex justify-between gap-[50px] lg:gap-0">
-            <div className="w-1/2 hidden md:block">
-              <img src={faqImg} alt="" />
+            <div className="w-1/2 hidden md:block md:p-6 md:w-[40%]">
+              <img className=" rounded-md" src={faqImg} alt="" />
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="heading">Most questions by our patients</h2>
