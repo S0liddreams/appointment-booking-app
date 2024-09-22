@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import doctorImg from "../../assets/images/doctorImg6.png";
 import starIcon from "../../assets/images/Star.png";
+import DoctorAbout from "./DoctorAbout";
+import Feedback from "./Feedback";
 
 const DoctorsDetails = () => {
+  const [tab, setTab] = useState("about");
+
   return (
     <section>
       <div className="max-w-[1170px] px-5 mx-auto ">
@@ -15,7 +19,7 @@ const DoctorsDetails = () => {
 
               <div>
                 <span
-                  className="bg-gray-600 text-primaryColor py-1 px-6 lg:py-2 lg:px-6 text-[12px] leading-4 
+                  className="bg-primaryColor text-white py-1 px-6 lg:py-2 lg:px-6 text-[12px] leading-4 
                    lg:text-[16px] lg:leading-7 font-semibold  rounded "
                 >
                   Surgeon
@@ -44,17 +48,30 @@ const DoctorsDetails = () => {
                 </p>
               </div>
             </div>
+
             <div className="mt-[50px] border-b border-solid border-gray-400">
               <button
-                className={`py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}
+                onClick={() => setTab("about")}
+                className={`${
+                  tab === "about" && "border-b border-solid border-primaryColor"
+                } py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}
               >
                 About
               </button>
               <button
-                className={`py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}
+                onClick={() => setTab("feedback")}
+                className={`${
+                  tab === "feedback" &&
+                  "border-b border-solid border-primaryColor"
+                } py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}
               >
                 Feedback
               </button>
+            </div>
+
+            <div className="mt-[50px]">
+              {tab === "about" && <DoctorAbout />}
+              {tab === "feedback" && <Feedback />}
             </div>
           </div>
           <div></div>
