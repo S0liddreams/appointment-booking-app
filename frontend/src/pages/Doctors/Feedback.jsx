@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import avatar from "../../assets/images/passport.jpg";
 import { formateDate } from "../../Utils/FormatDate";
+import { AiFillStar } from "react-icons/ai";
+import FeedbackForm from "./FeedbackForm";
 
 const Feedback = () => {
+  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
   return (
     <div>
       <div className="mb-[50px]">
@@ -23,11 +26,28 @@ const Feedback = () => {
               <p className="text-[14px] leading-6 text-textColor ">
                 {formateDate("9-23-24")}
               </p>
-              <p className="text__para mt-3 font-medium text-[15px] ">Good Service</p>
+              <p className="text__para mt-3 font-medium text-[15px] ">
+                Good Service, highly recomended{" "}
+              </p>
             </div>
+          </div>
+
+          <div className="flex gap-1">
+            {[...Array(5).keys()].map((_, index) => (
+              <AiFillStar key={index} color="#000011" />
+            ))}
           </div>
         </div>
       </div>
+
+      {!showFeedbackForm && (
+        <div className="text-center">
+          <button className="btn" onClick={() => setShowFeedbackForm(true)}>
+            Give Feedback
+          </button>
+        </div>
+      )}
+      {showFeedbackForm && <FeedbackForm />}
     </div>
   );
 };
